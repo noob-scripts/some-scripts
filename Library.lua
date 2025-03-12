@@ -1,8 +1,20 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
+local default = {
+    Main = Color3.fromRGB(10, 10, 50),
+    Second = Color3.fromRGB(5, 5, 20),
+    Stroke = Color3.fromRGB(2, 2, 10),
+    Divider = Color3.fromRGB(2, 2, 10),
+    Text = Color3.fromRGB(240, 240, 240),
+    TextDark = Color3.fromRGB(150, 150, 150)
+}
+OrionLib.Theme.Default = default
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Toggleui"
-ScreenGui.Parent = game.CoreGui
+if syn then
+    syn.protect_gui(ScreenGui)
+end
+ScreenGui.Parent = gethui() or game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
 local Toggle = Instance.new("TextButton")
