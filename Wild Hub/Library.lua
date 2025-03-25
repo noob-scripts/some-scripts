@@ -7,7 +7,7 @@ local default = {
     Text = Color3.fromRGB(240, 240, 240),
     TextDark = Color3.fromRGB(150, 150, 150)
 }
-OrionLib.Theme.Default = default
+OrionLib.Themes.Default = default
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Toggleui"
