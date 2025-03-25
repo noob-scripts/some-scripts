@@ -26,7 +26,7 @@ Toggle.TextSize = 25
 Toggle.Text = "+"
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 55, 0, 55)
-Toggle.TextColor = Color3.fromRGB(255, 255, 255)
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
 Toggle.Draggable = true
 
 local Corner = Instance.new("UICorner")
