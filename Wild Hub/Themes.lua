@@ -35,7 +35,7 @@ local default = {
 }
 
 return {
-    ["Default"] = default
+    ["Default"] = default,
     ["White theme"] = white_theme,
     ["Orion library"] = orion_lib_theme,
     ["Crimson shadow"] = crimson_shadow
