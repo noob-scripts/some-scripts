@@ -2,10 +2,10 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sev
 local default = {
     Main = Color3.fromRGB(10, 10, 50),
     Second = Color3.fromRGB(5, 5, 20),
-    Stroke = Color3.fromRGB(2, 2, 10),
+    Stroke = Color3.fromRGB(2, 5, 10),
     Divider = Color3.fromRGB(2, 2, 10),
-    Text = Color3.fromRGB(240, 240, 240),
-    TextDark = Color3.fromRGB(150, 150, 150)
+    Text = Color3.fromRGB(255, 255, 255),
+    TextDark = Color3.fromRGB(255, 255, 255)
 }
 OrionLib.Themes.Default = default
 
