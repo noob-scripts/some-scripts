@@ -33,4 +33,5 @@ tool:GetPropertyChangedSignal("Parent"):Connect(function()
     }
 
     game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Wear"):InvokeServer(unpack(args))
+        end
 end)
