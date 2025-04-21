@@ -2,8 +2,7 @@ local lp = game:GetService("Players").LocalPlayer
 local bp = lp.Backpack
 
 local tool = Instance.new("Tool", bp)
-tool.Name = "Plunger tool"
-tool.ToolTip = "Equip a Plunger"
+tool.Name = "Scythe of the witch doctor"
 
 local p = Instance.new("Part", bp)
 p.CanCollide = false
