@@ -18,7 +18,18 @@ end
 ScreenGui.Parent = gethui() or game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
-game:GetService("ContentProvider"):PreloadAsync({"https://www.roblox.com/library/81086834143424/Wild-Hub-logo"})
+function rstr(length)
+	local chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	local result = ""
+	for i = 1, length do
+		local randIndex = math.random(1, #chars)
+		result = result .. chars:sub(randIndex, randIndex)
+	end
+	return result
+end
+
+local name = "Logo-" .. rstr(15) .. "-WHub.png"
+writefile(name, game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/WildHub.png"))
 local Toggle = Instance.new("ImageButton")
 Toggle.Name = "Toggle"
 Toggle.Parent = ScreenGui
@@ -26,12 +37,13 @@ Toggle.BackgroundColor3 = Color3.fromRGB(10, 10, 50)
 Toggle.BackgroundTransparency = 0.2
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 55, 0, 55)
-Toggle.Image = "https://www.roblox.com/library/81086834143424/Wild-Hub-logo"
+Toggle.Image = getcustomasset(name)
 Toggle.Draggable = true
 Toggle.Selectable = true
 Toggle.Active = true
 Toggle.MouseButton1Click:Connect(function()
         OrionLib:ToggleUi()
     end)
+delfile(name)
 
 return OrionLib
