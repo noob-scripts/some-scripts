@@ -18,6 +18,7 @@ end
 ScreenGui.Parent = gethui() or game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
+game:GetService("ContentProvider"):PreloadAsync({"rbxassetid://81086834143424"})
 local Toggle = Instance.new("ImageButton")
 Toggle.Name = "Toggle"
 Toggle.Parent = ScreenGui
