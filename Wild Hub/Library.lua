@@ -44,6 +44,7 @@ Toggle.Active = true
 Toggle.MouseButton1Click:Connect(function()
         OrionLib:ToggleUi()
     end)
+task.wait(.1)
 delfile(name)
 
 return OrionLib
