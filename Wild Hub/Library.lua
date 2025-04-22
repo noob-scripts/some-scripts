@@ -22,8 +22,8 @@ game:GetService("ContentProvider"):PreloadAsync({"rbxassetid://81086834143424"})
 local Toggle = Instance.new("ImageButton")
 Toggle.Name = "Toggle"
 Toggle.Parent = ScreenGui
-Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Toggle.BackgroundTransparency = 1
+Toggle.BackgroundColor3 = Color3.fromRGB(10, 10, 50)
+Toggle.BackgroundTransparency = 0.2
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 55, 0, 55)
 Toggle.Image = "rbxassetid://81086834143424"
