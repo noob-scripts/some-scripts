@@ -5,7 +5,8 @@ local default = {
     Stroke = Color3.fromRGB(2, 5, 10),
     Divider = Color3.fromRGB(2, 2, 10),
     Text = Color3.fromRGB(255, 255, 255),
-    TextDark = Color3.fromRGB(255, 255, 255)
+    TextDark = Color3.fromRGB(255, 255, 255),
+    
 }
 OrionLib.Themes.Default = default
 
@@ -28,5 +29,8 @@ Toggle.Image = "rbxassetid://81086834143424"
 Toggle.Draggable = true
 Toggle.Selectable = true
 Toggle.Active = true
+Toggle.MouseButton1Click:Connect(function()
+        OrionLib:ToggleUi()
+    end)
 
 return OrionLib
