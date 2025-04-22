@@ -2,7 +2,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Sev
 local default = {
     Main = Color3.fromRGB(10, 10, 50),
     Second = Color3.fromRGB(5, 5, 20),
-    Stroke = Color3.fromRGB(2, 5, 10),
+    Stroke = Color3.fromRGB(255, 255, 255),
     Divider = Color3.fromRGB(2, 2, 10),
     Text = Color3.fromRGB(255, 255, 255),
     TextDark = Color3.fromRGB(255, 255, 255),
@@ -18,7 +18,7 @@ end
 ScreenGui.Parent = gethui() or game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
-game:GetService("ContentProvider"):PreloadAsync({"rbxassetid://81086834143424"})
+game:GetService("ContentProvider"):PreloadAsync({"https://www.roblox.com/library/81086834143424/Wild-Hub-logo"})
 local Toggle = Instance.new("ImageButton")
 Toggle.Name = "Toggle"
 Toggle.Parent = ScreenGui
@@ -26,7 +26,7 @@ Toggle.BackgroundColor3 = Color3.fromRGB(10, 10, 50)
 Toggle.BackgroundTransparency = 0.2
 Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
 Toggle.Size = UDim2.new(0, 55, 0, 55)
-Toggle.Image = "rbxassetid://81086834143424"
+Toggle.Image = "https://www.roblox.com/library/81086834143424/Wild-Hub-logo"
 Toggle.Draggable = true
 Toggle.Selectable = true
 Toggle.Active = true
