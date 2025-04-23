@@ -1,3 +1,10 @@
+local exec_name = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname())
+if not exec_name then
+    game.Players.LocalPlayer:Kick("Your executor was not identified.")
+    repeat until false
+    return
+end
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
 local default = {
     Main = Color3.fromRGB(10, 10, 50),
