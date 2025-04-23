@@ -32,6 +32,15 @@ Toggle.Active = true
 Toggle.MouseButton1Click:Connect(function()
         OrionLib:ToggleUi()
     end)
-task.wait(.1)
+
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0, 12)
+corner.Parent = Toggle
+
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(255, 255, 255)
+stroke.Thickness = 2
+stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+stroke.Parent = Toggle
 
 return OrionLib
