@@ -38,3 +38,5 @@ function module:BypassText(inputString)
         return char .. addAfter
     end)
 end
+
+return module
