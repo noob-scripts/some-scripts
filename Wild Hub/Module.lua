@@ -39,4 +39,17 @@ function module:BypassText(inputString)
     end)
 end
 
+-- pls dont add _G.ERROR_MESSAGE_WILD_HUB before, it maybe break all scripts
+if _G.ERROR_MESSAGE_WILD_HUB then
+	_G.ERROR_MESSAGE_WILD_HUB:Destroy()
+end
+_G.ERROR_MESSAGE_WILD_HUB = nil
+function module:Error(Message)
+	if not _G.ERROR_MESSAGE_WILD_HUB then
+		_G.ERROR_MESSAGE_WILD_HUB = Instance.new("Message", workspace)
+		_G.ERROR_MESSAGE_WILD_HUB.Text = "[WILD HUB ERROR] [" .. identifyexecutor() .. "]\n\t{{ \"" .. Message .. "\" }}"
+	else
+		_G.ERROR_MESSAGE_WILD_HUB:Destroy()
+	end
+end
 return module
