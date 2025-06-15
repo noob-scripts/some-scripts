@@ -12,9 +12,6 @@ OrionLib.Themes.Default = default
 
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Toggleui"
-if syn then
-    syn.protect_gui(ScreenGui)
-end
 ScreenGui.Parent = gethui() or game.CoreGui
 ScreenGui.ResetOnSpawn = false
 
@@ -42,5 +39,7 @@ stroke.Color = Color3.fromRGB(255, 255, 255)
 stroke.Thickness = 2
 stroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 stroke.Parent = Toggle
+
+_G.WILD_HUB_BUTTON = ScreenGui
 
 return OrionLib
