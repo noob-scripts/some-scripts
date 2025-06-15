@@ -295,8 +295,7 @@ end)
 CreateElement("Frame", function(Color)
 	local Frame = Create("Frame", {
 		BackgroundColor3 = Color or Color3.fromRGB(255, 255, 255),
-		BorderSizePixel = 0,
-    BackgroundTransparency = 0.5
+		BorderSizePixel = 0
 	})
 	return Frame
 end)
@@ -468,6 +467,13 @@ function OrionLib:MakeWindow(WindowConfig)
 	local Loaded = false
 	local UIHidden = false
 
+       if WindowConfig.CloseCallback then
+	    local oldcc;oldcc=hookfunction(WindowConfig.CloseCallback, function()
+	        if _G.WILD_HUB_BUTTON then _G.WILD_HUB_BUTTON:Destroy() end
+		return oldcc()
+	    end
+	end
+
 	WindowConfig = WindowConfig or {}
 	WindowConfig.Name = WindowConfig.Name or "Orion Library"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
@@ -477,7 +483,9 @@ function OrionLib:MakeWindow(WindowConfig)
 		WindowConfig.IntroEnabled = true
 	end
 	WindowConfig.IntroText = WindowConfig.IntroText or "Orion Library"
-	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
+	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function()
+		if _G.WILD_HUB_BUTTON then _G.WILD_HUB_BUTTON:Destroy() end
+	end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
 	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
 	WindowConfig.IntroIcon = WindowConfig.IntroIcon or "rbxassetid://8834748103"
