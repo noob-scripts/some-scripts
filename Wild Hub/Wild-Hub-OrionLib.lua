@@ -490,8 +490,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	end
 
 	local TabHolder = AddThemeObject(SetChildren(SetProps(MakeElement("ScrollFrame", Color3.fromRGB(255, 255, 255), 4), {
-		Size = UDim2.new(1, 0, 1, -50),
-    BackgroundTransparency = 0.3
+		Size = UDim2.new(1, 0, 1, -50)
 	}), {
 		MakeElement("List"),
 		MakeElement("Padding", 8, 0, 0, 8)
@@ -603,7 +602,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		Position = UDim2.new(0.5, -307, 0.5, -172),
 		Size = UDim2.new(0, 615, 0, 344),
 		ClipsDescendants = true,
-    BackgroundTransparency = 0.5
+    BackgroundTransparency = 0.2
 	}), {
 		--SetProps(MakeElement("Image", "rbxassetid://3523728077"), {
 		--	AnchorPoint = Vector2.new(0.5, 0.5),
