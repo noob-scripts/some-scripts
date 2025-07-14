@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/Seven7-lua/Roblox/refs/heads/main/Librarys/Orion/Orion.lua')))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Wild-Hub-OrionLib.lua')))()
 local default = {
     Main = Color3.fromRGB(10, 10, 50),
     Second = Color3.fromRGB(5, 5, 20),
