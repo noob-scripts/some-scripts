@@ -25,7 +25,7 @@ local OrionLib = {
 	SaveCfg = false
 }
 
---Feather Icons https://github.com/evoincorp/lucideblox/tree/master/src/modules/util - Created by 7kayoh
+-- fixed feather icons error (http not found error)
 local Icons = {}
 
 local Success, Response = pcall(function()
