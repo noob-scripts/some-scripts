@@ -633,6 +633,8 @@ function OrionLib:MakeWindow(WindowConfig)
 		DragPoint,
 		WindowStuff
 	}), "Main")
+	local blur = Instance.new("UIBlur", MainWindow)
+	blur.Size = 24
 
 	if WindowConfig.ShowIcon then
 		WindowName.Position = UDim2.new(0, 50, 0, -24)
@@ -1721,3 +1723,4 @@ function OrionLib:ToggleUi()
 end
 
 return OrionLib
+
