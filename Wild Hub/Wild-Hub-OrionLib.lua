@@ -403,9 +403,10 @@ function OrionLib:MakeNotification(NotificationConfig)
 			Size = UDim2.new(1, 0, 0, 0),
 			Position = UDim2.new(1, -55, 0, 0),
 			BackgroundTransparency = 0,
+			BackgroundColor3 = OrionLib.Default.Themes.Main,
 			AutomaticSize = Enum.AutomaticSize.Y
 		}), {
-			MakeElement("Stroke", Color3.fromRGB(93, 93, 93), 1.2),
+			MakeElement("Stroke", OrionLib.Default.Themes.Stroke, 1.2),
 			MakeElement("Padding", 12, 12, 12, 12),
 			SetProps(MakeElement("Image", NotificationConfig.Image), {
 				Size = UDim2.new(0, 20, 0, 20),
@@ -424,7 +425,7 @@ function OrionLib:MakeNotification(NotificationConfig)
 				Font = Enum.Font.GothamSemibold,
 				Name = "Content",
 				AutomaticSize = Enum.AutomaticSize.Y,
-				TextColor3 = Color3.fromRGB(200, 200, 200),
+				TextColor3 = OrionLib.Default.Themes.Text,
 				TextWrapped = true
 			})
 		})
@@ -1721,6 +1722,7 @@ function OrionLib:ToggleUi()
 end
 
 return OrionLib
+
 
 
 
