@@ -76,6 +76,20 @@ function OrionLib:IsRunning()
 
 end
 
+local function fix_list(uiListLayout)
+    assert(uiListLayout and uiListLayout:IsA("UIListLayout"), "Expected a UIListLayout")
+    local parent = uiListLayout.Parent
+    if not parent or not parent:IsA("ScrollingFrame") then
+        warn("UIListLayout parent should be a ScrollingFrame")
+        return
+    end
+    parent.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    uiListLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+        parent.CanvasSize = UDim2.new(0, 0, 0, uiListLayout.AbsoluteContentSize.Y)
+    end)
+    parent.CanvasSize = UDim2.new(0, 0, 0, uiListLayout.AbsoluteContentSize.Y)
+end
+
 local function AddConnection(Signal, Function)
 	if (not OrionLib:IsRunning()) then
 		return
@@ -646,7 +660,7 @@ function OrionLib:MakeWindow(WindowConfig)
 
 	AddDraggingFunctionality(DragPoint, MainWindow)
 
-	AddConnection(CloseBtn.MouseButton1Up, function()
+	AddConnection(CloseBtn.MouseButton1Click, function()
 		MainWindow.Visible = false
 		UIHidden = true
 		OrionLib:MakeNotification({
@@ -663,7 +677,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		end
 	end)
 
-	AddConnection(MinimizeBtn.MouseButton1Up, function()
+	AddConnection(MinimizeBtn.MouseButton1Click, function()
 		if Minimized then
 			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, 615, 0, 344)}):Play()
 			MinimizeBtn.Ico.Image = "rbxassetid://7072719338"
@@ -984,6 +998,32 @@ function OrionLib:MakeWindow(WindowConfig)
 
 				AddConnection(Click.MouseButton1Down, function()
 					TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(OrionLib.Themes[OrionLib.SelectedTheme].Second.R * 255 + 6, OrionLib.Themes[OrionLib.SelectedTheme].Second.G * 255 + 6, OrionLib.Themes[OrionLib.SelectedTheme].Second.B * 255 + 6)}):Play()
+				end)
+
+				AddConnection(ToggleFrame.InputBegan, function(input)
+					if input.UserInputType == Enum.UserInputType.MouseButton1 then
+					    TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(OrionLib.Themes[OrionLib.SelectedTheme].Second.R * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.G * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+					end
+				end)
+
+				AddConnection(ToggleFrame.InputBegan, function(inp)
+					if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+				    	TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = OrionLib.Themes[OrionLib.SelectedTheme].Second}):Play()
+					end
+				end)
+
+				AddConnection(ToggleFrame.InputBegan, function(inp)
+					if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+				    	TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(OrionLib.Themes[OrionLib.SelectedTheme].Second.R * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.G * 255 + 3, OrionLib.Themes[OrionLib.SelectedTheme].Second.B * 255 + 3)}):Play()
+					    SaveCfg(game.GameId)
+					    Toggle:Set(not Toggle.Value)
+					end
+				end)
+
+				AddConnection(ToggleFrame.InputBegan, function(inp)
+					if inp.UserInputType == Enum.UserInputType.MouseButton1 then
+					    TweenService:Create(ToggleFrame, TweenInfo.new(0.25, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {BackgroundColor3 = Color3.fromRGB(OrionLib.Themes[OrionLib.SelectedTheme].Second.R * 255 + 6, OrionLib.Themes[OrionLib.SelectedTheme].Second.G * 255 + 6, OrionLib.Themes[OrionLib.SelectedTheme].Second.B * 255 + 6)}):Play()
+					end
 				end)
 
 				if ToggleConfig.Flag then
@@ -1722,6 +1762,7 @@ function OrionLib:ToggleUi()
 end
 
 return OrionLib
+
 
 
 
