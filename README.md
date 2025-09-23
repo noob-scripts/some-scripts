@@ -8,3 +8,5 @@ A Roblox Script Hub made by Wild Wide, on Github and Discord!!!!
 
 ## Note:
 ### This Script Hub will have more games on the future btw
+
+[Discord server (Please join it):](https://discord.gg/mhzDcapGgA)
