@@ -1,5 +1,6 @@
-A Roblox Script Hub made by Wild Wide, on Github and Discord!!!!
 ![Wild Hub Logo](https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/assets/Wild-Wide-Logo.png?raw=true)
+
+A Roblox Script Hub made by Wild Wide, on Github and Discord!!!!
 
 ## MAKE PEOPLE MAD WITH MY HUB, BY FLINGING THEM, KILLING THEM, TARGETING THEM AND MAYBE BRINGING THEM
 
