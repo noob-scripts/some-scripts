@@ -1,4 +1,15 @@
 setclipboard("https://discord.gg/mhzDcapGgA")
+
+local nagi_hub_detected = false
+for i, v in pairs(getnilinstances()) do
+    if tostring(v) == "ScreenGui" and v:FindFirstChild("TextLabel").Text:lower():find("nagi") then
+        nagi_hub_detected = true
+        break
+    end
+end
+
+task.wait(.2)
+if nagi_hub_detected then
 local SG = Instance.new("ScreenGui", game.CoreGui)
 SG.IgnoreGuiInset = true
 SG.DisplayOrder = 99999999
@@ -18,3 +29,6 @@ T.Text = "⚠️ PLEASE EXECUTE THE ORIGINAL WILD HUB SCRIPT, NAGI HUB SKIDDED W
 
 task.wait(0.2)
 while true do end
+end
+
+loadstring(game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/Loader.lua?raw=true"))()
