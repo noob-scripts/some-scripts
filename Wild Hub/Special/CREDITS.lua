@@ -1,8 +1,9 @@
 local gui = Instance.new("ScreenGui")
 if syn and syn.protect_gui then
-    syn.protect_gui(gui)
+	syn.protect_gui(gui)
 end
 gui.ResetOnSpawn = false
+gui.Parent = (gethui and gethui()) or cloneref(game:GetService("CoreGui"))
 
 local text = Instance.new("TextLabel")
 text.Parent = gui
@@ -13,13 +14,21 @@ text.TextScaled = true
 text.Size = UDim2.new(0, 100, 0, 20)
 text.Font = Enum.Font.SourceSansBold
 
+local TweenService = game:GetService("TweenService")
 local random = Random.new()
 
+gui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
 while true do
-    local x = random:NextNumber(0, 1)
-    local y = random:NextNumber(0, 1)
+	local x = random:NextNumber(0,1)
+	local y = random:NextNumber(0,1)
 
-    text.Position = UDim2.new(x, -50, y, -10)
+	local newPos = UDim2.new(x, -50, y, -10)
+	local info = TweenInfo.new(1, Enum.EasingStyle.Linear)
 
-    task.wait(10)
+	local tween = TweenService:Create(text, info, {Position = newPos})
+	tween:Play()
+	tween.Completed:Wait()
+
+	task.wait(9)
 end
