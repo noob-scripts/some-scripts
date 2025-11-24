@@ -2,7 +2,7 @@ setclipboard("https://discord.gg/mhzDcapGgA")
 
 local nagi_hub_detected = false
 for i, v in pairs(getnilinstances()) do
-    if tostring(v) == "ScreenGui" and v:FindFirstChild("TextLabel").Text:lower():find("nagi") then
+    if tostring(v) == "ScreenGui" and v:FindFirstChild("TextLabel", true).Text:lower():find("nagi") then
         nagi_hub_detected = true
         break
     end
