@@ -1,34 +1,29 @@
-setclipboard("https://discord.gg/mhzDcapGgA")
+makefolder("WildHub")
+makefolder("WildHub/assets")
+makefolder("WildHub/Config")
+writefile("WildHub/assets/WW-Logo.png", game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/assets/Wild-Wide-Logo.png?raw=true"))
+writefile("WildHub/assets/Voldex-Logo.png", game:HttpGet("https://avatars.githubusercontent.com/u/73309439?s=200&v=4"))
 
-local nagi_hub_detected = false
-for i, v in pairs(getnilinstances()) do
-    if tostring(v) == "ScreenGui" and v:FindFirstChild("TextLabel", true).Text:lower():find("nagi") then
-        nagi_hub_detected = true
-        break
-    end
+-- lobby: 16116270224
+-- game: 16552821455
+
+local scripts = {
+    [4924922222] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/Brookhaven.lua?raw=true",
+    [3956818381] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/NinjaLegends.lua?raw=true",
+    [155382109] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/SAKTKIA51.lua",
+    [3101667897] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/LegendsOfSpeed.lua?raw=true",
+    [70671905624144] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/StealABaddie.lua",
+    [142823291] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/MM2.lua?raw=true",
+    [14518422161] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/GunFight.lua?raw=true",
+    [121864768012064] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/FishIt.lua",
+    [16116270224] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/DandysWorldLobby.lua",
+    [16552821455] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/DandysWorldGame.lua"
+}
+
+local placeid = game.PlaceId
+if scripts[placeid] then
+    loadstring(game:HttpGet(scripts[placeid]))()
+else
+    loadatring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Universal/Anticheat-Bypasses.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Universal.lua"))()
 end
-
-task.wait(.2)
-if nagi_hub_detected then
-local SG = Instance.new("ScreenGui", game.CoreGui)
-SG.IgnoreGuiInset = true
-SG.DisplayOrder = 99999999
-
-local F = Instance.new("Frame", SG)
-F.Size = UDim2.new(1,0,1,0)
-F.BackgroundColor3 = Color3.new(0,0,0)
-
-local T = Instance.new("TextLabel", F)
-T.AnchorPoint = Vector2.new(0.5,0.5)
-T.Position = UDim2.new(0.5,0,0.5,0)
-T.Size = UDim2.new(0.8,0,0.12,0)
-T.BackgroundTransparency = 1
-T.TextColor3 = Color3.new(1,1,1)
-T.TextScaled = true
-T.Text = "⚠️ PLEASE EXECUTE THE ORIGINAL WILD HUB SCRIPT, NAGI HUB SKIDDED WILD HUB\nTHE ORIGINAL CREATOR IS WILD WIDE\nJOIN OFFICIAL SERVER: https://discord.gg/mhzDcapGgA (WILD SCRIPTS)"
-
-task.wait(0.2)
-while true do end
-end
-
-loadstring(game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/Loader.lua?raw=true"))()
