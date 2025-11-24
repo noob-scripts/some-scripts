@@ -24,6 +24,6 @@ local placeid = game.PlaceId
 if scripts[placeid] then
     loadstring(game:HttpGet(scripts[placeid]))()
 else
-    loadatring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Universal/Anticheat-Bypasses.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Universal/Anticheat-Bypasses.lua"))()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Universal.lua"))()
 end
