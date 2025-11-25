@@ -7,7 +7,7 @@ gui.Parent = (gethui and gethui()) or cloneref(game:GetService("CoreGui"))
 
 local text = Instance.new("TextLabel")
 text.Parent = gui
-text.Text = "Script made by Wild Wide"
+text.Text = "Wild Hub by Wild Wide"
 text.TextColor3 = Color3.new(1, 1, 1)
 text.BackgroundTransparency = 1
 text.TextScaled = true
