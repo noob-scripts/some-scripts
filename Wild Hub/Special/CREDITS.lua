@@ -3,7 +3,6 @@ if syn and syn.protect_gui then
 	syn.protect_gui(gui)
 end
 gui.ResetOnSpawn = false
-gui.Parent = (gethui and gethui()) or cloneref(game:GetService("CoreGui"))
 
 local text = Instance.new("TextLabel")
 text.Parent = gui
@@ -17,7 +16,7 @@ text.Font = Enum.Font.SourceSansBold
 local TweenService = game:GetService("TweenService")
 local random = Random.new()
 
-gui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+gui.Parent = (gethui and gethui()) or cloneref(game:GetService("CoreGui"))
 
 while true do
 	local x = random:NextNumber(0,1)
