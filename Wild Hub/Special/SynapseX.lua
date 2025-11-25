@@ -119,13 +119,6 @@ function Protect_gui(gui)
         return result
     end)
 
-    local b; b = hookmetamethod(game, "__index", function(self, index)
-        if table.find(protected_guis, self) and not checkcaller() then
-            return error("Attempt to index nil with '" .. index .. "'", 2)
-        end
-        return b(self, index)
-    end)
-
     gui.Parent = gethui()
 end
 
