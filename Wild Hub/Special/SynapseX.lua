@@ -126,12 +126,7 @@ function Protect_gui(gui)
         return b(self, index)
     end)
 
-    local c; c = hookmetamethod(gui, "__newindex", function(self, index, value)
-        if self == gui and index == "Parent" then
-            value = gethui()
-        end
-        return c(self, index, value)
-    end)
+    gui.Parent = gethui()
 end
 
 function Unprotect_gui(gui)
