@@ -101,23 +101,6 @@ function Protect_gui(gui)
     if not table.find(protected_guis, gui) then
         table.insert(protected_guis, gui)
     end
-    
-    local a; a = hookmetamethod(game, "__namecall", function(self, ...)
-        local Method = getnamecallmethod()
-        local result = a(self, ...)
-        if table.find({"FindFirstChild", "WaitForChild"}, Method) and table.find(protected_guis, result) and not checkcaller() then
-            return
-        elseif table.find({"GetChildren", "GetDescendants"}, Method) and not checkcaller() then
-            local clone = table.clone(result)
-            for i, v in pairs(clone) do
-                if table.find(protected_guis, v) then
-                    table.remove(clone, i)
-                end
-            end
-            return clone
-        end
-        return result
-    end)
 
     gui.Parent = gethui()
 end
