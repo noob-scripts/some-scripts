@@ -3,6 +3,7 @@ makefolder("WildHub/assets")
 makefolder("WildHub/Config")
 writefile("WildHub/assets/WW-Logo.png", game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/assets/Wild-Wide-Logo.png?raw=true"))
 writefile("WildHub/assets/Voldex-Logo.png", game:HttpGet("https://avatars.githubusercontent.com/u/73309439?s=200&v=4"))
+writefile("WildHub/assets/custom-cursor.png", game:HttpGet("https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/assets/fake-mouse.png"))
 
 -- loadstring(game:HttpGet("https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/Special/SynapseX.lua"))()
 
