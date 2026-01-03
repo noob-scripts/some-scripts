@@ -16,8 +16,8 @@ local scripts = {
     [142823291] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/MM2.lua?raw=true",
     [14518422161] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/GunFight.lua?raw=true",
     [121864768012064] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/FishIt.lua",
-    [16116270224] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/DandysWorldLobby.lua",
-    [16552821455] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/DandysWorldGame.lua"
+    [16116270224] = "https://github.com/noob-scripts/BCX/blob/main/DW_Lobby.lua?raw=true",
+    [16552821455] = "https://github.com/noob-scripts/BCX/blob/main/DW_Game.lua?raw=true"
 }
 
 local placeid = game.PlaceId
