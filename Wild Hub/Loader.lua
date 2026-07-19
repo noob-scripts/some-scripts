@@ -13,7 +13,7 @@ local scripts = {
     [155382109] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/SAKTKIA51.lua",
     [3101667897] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/LegendsOfSpeed.lua?raw=true",
     [70671905624144] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/StealABaddie.lua",
-    [142823291] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/MM2.lua?raw=true",
+    [142823291] = "https://raw.githubusercontent.com/NoovaScripts/BladHub/refs/heads/main/MM2",
     [14518422161] = "https://github.com/noob-scripts/some-scripts/blob/master/Wild%20Hub/GunFight.lua?raw=true",
     [121864768012064] = "https://raw.githubusercontent.com/noob-scripts/some-scripts/refs/heads/master/Wild%20Hub/FishIt.lua",
     [16116270224] = "https://github.com/noob-scripts/BCX/blob/main/DW_Lobby.lua?raw=true",
